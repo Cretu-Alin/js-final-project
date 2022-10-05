@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Sport Club App</title>
+  </head>
+  <body>
+    <header>
+      <h1>SPORTS club members</h1>
+    </header>
+    <div class="container">
+      <aside class="side-content"></aside>
+      <div class="main-content">
+        <div class="add-member">
+          <h2>Add new member</h2>
+          <hr />
+          <form action="" class="form-to-add">
+            <div class="fname">
+              <label for="fname">First Name*</label>
+              <input type="text" id="fname" name="fname" />
+              <small></small>
+            </div>
+            <div class="lname">
+              <label for="lname">Last Name*</label>
+              <input type="text" id="lname" />
+              <small></small>
+            </div>
+
+            <div class="address">
+              <label for="address">Address*</label>
+              <input type="text" id="address" />
+              <small></small>
+            </div>
+
+            <div class="zip">
+              <label for="zip">Zip Code</label>
+              <input type="text" id="zip" />
+            </div>
+            <div class="city">
+              <label for="city">City*</label>
+              <input type="text" id="city" />
+              <small></small>
+            </div>
+
+            <div class="country">
+              <label for="country">Country*</label>
+              <input type="text" id="country" />
+              <small></small>
+            </div>
+            <div class="gender">
+              <label for="gender">Gender*</label>
+              <select name="gender" id="gender">
+                <option value=""></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <small></small>
+            </div>
+            <div class="age">
+              <label for="age">Age*</label>
+              <input type="number" id="age" min="0" max="100" />
+              <small></small>
+            </div>
+
+            <div class="activity-class">
+              <p>Activity Class</p>
+              <div class="white">
+                <input
+                  type="radio"
+                  id="professional"
+                  name="act_class"
+                  value="professional"
+                />
+                <label for="professional">professional</label>
+                <input
+                  type="radio"
+                  id="amateur"
+                  name="act_class"
+                  value="amateur"
+                />
+                <label for="amateur">amateur</label>
+              </div>
+            </div>
+
+            <div class="practiced-sports">
+              <p>Practiced sports</p>
+
+              <div class="sports">
+                <label class="sport-item">
+                  <input type="checkbox" value="running" />running
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="cycling" />cycling
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="swimming" />swimming
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="walking" />walking
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="skiing" />skiing
+                </label>
+              </div>
+            </div>
+            <button class="save">Save</button>
+          </form>
+        </div>
+        <div class="edit-member">
+          <h2>Edit member</h2>
+          <hr />
+          <form action="" method="post" class="form-to-edit">
+            <div class="fname">
+              <label for="fname-edit">First Name*</label>
+              <input type="text" id="fname-edit" name="fname-edit" />
+              <small></small>
+            </div>
+            <div class="lname">
+              <label for="lname-edit">Last Name*</label>
+              <input type="text" id="lname-edit" name="lname-edit" />
+              <small></small>
+            </div>
+
+            <div class="address">
+              <label for="address-edit">Address*</label>
+              <input type="text" id="address-edit" name="address-edit" />
+              <small></small>
+            </div>
+
+            <div class="zip">
+              <label for="zip-edit">Zip Code</label>
+              <input type="text" id="zip-edit" name="zip-edit" />
+              <small></small>
+            </div>
+            <div class="city">
+              <label for="city-edit">City*</label>
+              <input type="text" id="city-edit" name="city-edit" />
+              <small></small>
+            </div>
+
+            <div class="country">
+              <label for="country-edit">Country*</label>
+              <input type="text" id="country-edit" />
+              <small></small>
+            </div>
+            <div class="gender">
+              <label for="gender-edit">Gender*</label>
+              <select name="gender" id="gender-edit">
+                <option value=""></option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <small></small>
+            </div>
+            <div class="age">
+              <label for="age-edit">Age*</label>
+              <input type="number" id="age-edit" min="0" max="100" />
+              <small></small>
+            </div>
+
+            <div class="activity-class">
+              <p>Activity Class</p>
+              <div class="white">
+                <input
+                  type="radio"
+                  id="professional-edit"
+                  name="act_class"
+                  value="professional"
+                />
+                <label for="professional-edit">professional</label>
+                <input
+                  type="radio"
+                  id="amateur-edit"
+                  name="act_class"
+                  value="amateur"
+                  class="amateur-edit"
+                />
+                <label for="amateur-edit">amateur</label>
+              </div>
+            </div>
+
+            <div class="practiced-sports">
+              <p>practiced sports</p>
+
+              <div class="sports">
+                <label class="sport-item">
+                  <input type="checkbox" value="running" />running
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="cycling" />cycling
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="swimming" />swimming
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="walking" />walking
+                </label>
+                <label class="sport-item">
+                  <input type="checkbox" value="skiing" />skiing
+                </label>
+              </div>
+            </div>
+            <button class="update">Update</button>
+          </form>
+        </div>
+
+        <footer>
+          <ul>
+            <div class="items-wrapper">
+              <li>Recent News</li>
+              <li>About us</li>
+            </div>
+            <div class="items-wrapper">
+              <li>Services</li>
+              <li>Contact us</li>
+            </div>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
